@@ -1,0 +1,32 @@
+.setting{
+    background-image: url(new2.jpg);
+}
+
+.jpeg{
+    background-color: rgba(82, 39, 125, 0.641);
+    height: 500px;
+    width: 400px;
+    border: 2px groove rgba(204, 0, 255, 0.684);
+    margin-top: 60px;
+    border-radius: 20px;
+}
+
+#font{
+    color: rgb(154, 65, 168);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;       
+}
+
+.decor1{
+    width: 200px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.decor{
+    background-color: black;
+    color: white;
+    border: 1px solid white ;
+    border-radius: 10px;
+}

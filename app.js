@@ -1,7 +1,23 @@
-let todo = document.querySelector(".decor1")
-let ul = document.querySelector(".ul")
+function testTodo() {
+    let inp = document.getElementById('input').value;
+    let gul = document.querySelector('.ul');
 
-function todoDecor(){
-    console.log(todo.value);
-    ul.innerHTML = `<li>monday</li>` ;
+    if (inp !== "") {
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode(inp));
+
+        let deleteButton = document.createElement('button');
+        deleteButton.appendChild(document.createTextNode('Delete'));
+        deleteButton.onclick = function() {
+           
+            gul.removeChild(li);
+        };
+
+        li.appendChild(deleteButton);
+        gul.appendChild(li);
+
+        document.getElementById('input').value = "";
+    } else {
+        alert("Input field can't be empty!");
+    }
 }

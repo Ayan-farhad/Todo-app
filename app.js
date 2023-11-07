@@ -1,23 +1,39 @@
-function testTodo() {
-    let inp = document.getElementById('input').value;
-    let gul = document.querySelector('.ul');
+let iNp = document.getElementById("input");
+let array = [];
 
-    if (inp !== "") {
-        let li = document.createElement('li');
-        li.appendChild(document.createTextNode(inp));
+function displayTasks() {
+    let setul = document.getElementById("ul");
+    setul.innerHTML = "";
 
-        let deleteButton = document.createElement('button');
-        deleteButton.appendChild(document.createTextNode('Delete'));
-        deleteButton.onclick = function() {
-           
-            gul.removeChild(li);
-        };
+    for (let i = 0; i < array.length; i++) {
+        let getLi = document.createElement("li");
+        getLi.innerHTML = array[i] + " <button onclick='editLi(" + i + ")' >Edit</button> <button  onclick='deleteLi(" + i + ")' >Delete</button>";
+        setul.appendChild(getLi);
+    }
+}
 
-        li.appendChild(deleteButton);
-        gul.appendChild(li);
+function funcTodo() {
+    let inpV = iNp.value;
+    if(inpV===""){
+        alert("Please enter a task!")
+    } 
 
-        document.getElementById('input').value = "";
-    } else {
-        alert("Input field can't be empty!");
+    iNp.value = "";
+
+    array.push(inpV);
+
+    displayTasks()
+}
+
+function deleteLi(index) {
+    array.splice(index, 1);
+    displayTasks();
+}
+
+function editLi(index) {
+    let editedTask = prompt("Edit task:", array[index]);
+    if (editedTask !== null) {
+        array[index] = editedTask;
+        displayTasks();
     }
 }

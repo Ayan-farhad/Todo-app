@@ -8,6 +8,9 @@ function funcTodo(){
     getul.appendChild(li)
  
     inp.value= ""
+    if(inp.value==""){
+        alert("Please enter a task")
+    }
     let deletebtn = document.createElement("button")
     let deletebtntext = document.createTextNode("Delete")
     deletebtn.appendChild(deletebtntext)
@@ -21,7 +24,7 @@ function funcTodo(){
     editbtn.setAttribute("onclick","editbtn(this)")
 }
 
-function Delateall(){
+function DeleteAll(e){
     getul.innerHTML = ''
 }
 

@@ -24,7 +24,7 @@ function funcTodo(){
     editbtn.setAttribute("onclick","editbtn(this)")
 }
 
-function DeleteAll(e){
+function DeleteAll(){
     getul.innerHTML = ''
 }
 

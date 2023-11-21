@@ -1,39 +1,35 @@
-let iNp = document.getElementById("input");
-let array = [];
+let getul = document.getElementById("ul");
+function funcTodo(){
+    let inp = document.getElementById("input")
+    let li = document.createElement("li");
+    
+    let liText = document.createTextNode(inp.value)
+    li.appendChild(liText)
+    getul.appendChild(li)
+ 
+    inp.value= ""
+    let deletebtn = document.createElement("button")
+    let deletebtntext = document.createTextNode("Delete")
+    deletebtn.appendChild(deletebtntext)
+    li.appendChild(deletebtn)
+    deletebtn.setAttribute("onclick","dbtn(this)")
 
-function displayTasks() {
-    let setul = document.getElementById("ul");
-    setul.innerHTML = "";
-
-    for (let i = 0; i < array.length; i++) {
-        let getLi = document.createElement("li");
-        getLi.innerHTML = array[i] + " <button onclick='editLi(" + i + ")' >Edit</button> <button  onclick='deleteLi(" + i + ")' >Delete</button>";
-        setul.appendChild(getLi);
-    }
+    let editbtn = document.createElement("button")
+    let editext = document.createTextNode("Edit")
+    editbtn.appendChild(editext)
+    li.appendChild(editbtn)
+    editbtn.setAttribute("onclick","editbtn(this)")
 }
 
-function funcTodo() {
-    let inpV = iNp.value;
-    if(inpV===""){
-        alert("Please enter a task!")
-    } 
-
-    iNp.value = "";
-
-    array.push(inpV);
-
-    displayTasks()
+function Delateall(){
+    getul.innerHTML = ''
 }
 
-function deleteLi(index) {
-    array.splice(index, 1);
-    displayTasks();
+function dbtn(e){
+    e.parentNode.remove()
 }
 
-function editLi(index) {
-    let editedTask = prompt("Edit task:", array[index]);
-    if (editedTask !== null) {
-        array[index] = editedTask;
-        displayTasks();
-    }
+function editbtn(e){
+    let pro = prompt("Update",e.parentNode.firstChild.nodeValue)
+    e.parentNode.firstChild.nodeValue = pro
 }

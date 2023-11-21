@@ -1,21 +1,23 @@
 body {
     background-image: url(new2.jpg);
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
 }
 
 
 .div{
     background-color: rgba(82, 39, 125, 0.641);
-    height: 600px;
-    width: 500px;
+    height: 650px;
+    width: 600px;
     border: 2px groove rgba(204, 0, 255, 0.684);
     margin-top: 60px;
     border-radius: 20px;
 }
 
 .h1{
-    color: rgb(222, 57, 222);
+    font-size: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;       
+    color: rgb(222, 57, 222);
 }
 
 #input{
@@ -27,8 +29,8 @@ body {
 }
 
 .btn{
-    width: 50px;
     font-size: medium;
+    font-weight: 500;
     background-color:  rgb(164, 30, 164);
     color: white;
     border: 1px solid rgb(164, 30, 164) ;
@@ -36,14 +38,15 @@ body {
 }
 
 ul {
-    list-style-type: none;
-    padding-right:-10px;
+    list-style-type: none; 
+    padding-right: 10px;
    
 }
 
 li {
+
     list-style: decimal;
-    margin: 10px 0;
+    margin-right: 25px;
     padding: 10px;
     color: white;
     border: 2px solid rgb(222, 57, 222);
@@ -58,4 +61,5 @@ ul li button {
     background-color: rgb(164, 30, 164);
     color: white;
     font-size:medium;
-} 
+    font-weight: 600;
+}  
